@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function validateForm() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const country = document.querySelector('input[name="country"]:checked');
+
+            if (username === "" || password === "" || !country) {
+                alert("Please fill in all the required fields.");
+                return false;
+            }
+        }
+
+        function resetForm() {
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            const countryRadios = document.querySelectorAll('input[name="country"]');
+            countryRadios.forEach(radio => radio.checked = false);
+            document.getElementById("acknowledgement").checked = false;
+        }
+    </script>
+</head>
+<body>
+    <div class = "form-container">
+    <h1 class = "form-heading">User Registration Form</h1>
+    <hr>
+    <form>
+        <div class = "form-section">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username.">
+        </div>
+        <div class = "form-section">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+        </div>
+        <div class="form-section">
+            <label>Country:</label>
+            <div class = "form-radio">
+                <input type="radio" id="india" name="country" value="india">
+                <label for="india">India</label>
+            </div>
+            <div class = "form-radio">
+                <input type="radio" id="china" name="country" value="china">
+                <label for="china">China</label>
+            </div>
+            <div class = "form-radio">
+                <input type="radio" id="uk" name="country" value="uk">
+                <label for="uk">UK</label>
+            </div>
+        </div>
+        <div class = "form-section">
+            <input type="checkbox" id="acknowledgement" name="acknowledgement">
+            <label for="acknowledgement">Check this to receive an acknowledgement</label>
+        </div>
+        <div class = "form-section">
+            <button class = "form-btn" type="submit" onclick="return validateForm();">Login</button>
+            <button class = "form-btn" type="reset">Reset</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+.form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+}
+
+.form-radio {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-section {
+    margin-bottom: 15px;
+}
+
+.form-btn {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px; /* Add some spacing between buttons */
+}
